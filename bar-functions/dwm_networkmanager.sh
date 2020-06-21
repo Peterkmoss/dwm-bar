@@ -7,14 +7,13 @@
 # Dependencies: NetworkManager, curl
 
 dwm_networkmanager () {
-	CONNAME=$(iw dev wlan0 info | grep ssid | cut -d " " -f2)
     PRIVATE=$(hostname -i | sed 's/ *$//g')
 
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
-        printf "🌐 %s %s" "$CONNAME" "$PRIVATE"
+        printf "🌐 %s" "$PRIVATE"
     else
-        printf "NET %s %s" "$CONNAME" "$PRIVATE"
+        printf "NET %s" "$PRIVATE"
     fi
     printf "%s" "$SEP2"
 }
